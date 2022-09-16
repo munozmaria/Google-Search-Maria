@@ -4,6 +4,23 @@
 	margin: 0;
 }
 
+
+:root {
+    --dark: #242323;
+    --light: #d0d0d0;
+    --boxBtn: 2px 2px 5px rgba(0, 0, 0, 0.596), 3px 3px 6px rgba(0, 0, 0, 0.15),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.816), inset 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    transition: background 0.5s;
+}
+
+body.dark {
+    background: var(--dark);
+}
+
+
 section {
     position: relative;
    display: flex;
@@ -100,3 +117,39 @@ section {
     border: 1px solid hsl(220deg, 9%, 87%);
     color: hsl(225deg, 6%, 13%);
 }
+
+/*--------bouton changer a noir-------------*/
+.btnChange {
+
+    position: absolute;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 80%;
+    z-index: 1;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: var(--boxBtn);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+}
+
+.btn-dark .btnChange:hover {
+    transform: scale(0.9);
+}
+
+.btn-dark .btnChange::before {
+    content: '\f186';
+    font-family: fontAwesome;
+    color: #000;
+}
+
+body.dark .btn-dark .btnChange::before {
+    content: '\f185';
+    font-family: fontAwesome;
+}
+
+/*--------bouton changer a noir-------------*/
